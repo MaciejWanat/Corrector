@@ -1,0 +1,13 @@
+
+export letter = Optimize["a" | "ą" | "b" | "c" | "d" | "e" | "ę" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "ł" | "m" | "n" | "o" | "p" | "r" | "s" | "ś" | "t" | "u" | "w" | "ó" | "z" | "ź" | "ż" | "y"] ;
+
+export copy   = Optimize[letter*] ;
+
+export err    = (("a":"ą") | ("ą":"a")| ("u":"ó") | ("ó":"u") | ("ż" : "rz") | ("rz" : "ż"))<1> ;
+
+export dict = StringFile['./Dictionaries/odmNorm.txt'];
+#export dict = "rura" | "róża" | "rury" | "róży" | "rurze" | "róże";
+
+export errormaker = dict @ ((letter|err)+) ;
+
+export corrector  = Optimize[Invert[errormaker]];
