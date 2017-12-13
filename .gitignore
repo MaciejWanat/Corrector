@@ -1,2 +1,3 @@
-corrector.far
+*.far
 Dictionaries/odm.txt
+Makefile
