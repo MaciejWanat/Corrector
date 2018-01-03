@@ -1,8 +1,6 @@
 
 export letter = Optimize["a" | "ą" | "b" | "c" | "ć" | "d" | "e" | "ę" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "ł" | "m" | "n" | "o" | "p" | "r" | "s" | "ś" | "t" | "u" | "w" | "ó" | "z" | "ź" | "ż" | "y"] ;
 
-export copy   = Optimize[letter*] ;
-
 export err    = (("ć":"c") | ("c":"ć") | ("ż":"z") | ("z":"ż") | ("ź":"z") | ("z":"ź") | ("ó":"o") | ("o":"ó") | ("l":"ł") | ("ł":"l") | ("e":"ę") | ("ę":"e") | ("om":"ą") | ("ą":"om") | ("a":"ą") | ("ą":"a") | ("h":"ch") | ("ch":"h") | ("u":"ó") | ("ó":"u") | ("ż":"rz") | ("rz":"ż"))<1> ;
 
 export dict = Optimize[StringFile['./Dictionaries/polimorfNorm.txt']];
